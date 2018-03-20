@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>task5</title>
+    <style>
+        ul {
+            margin: 5px 5px 5px 0;
+            padding: 0;
+        }
+
+        li {
+            background-color: red;
+            margin: 0 3px;
+            width: 30px;
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        #sort {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="text" id="text" placeholder="请输入数字">
+        <button type="button" id="leftIn">左侧入</button>
+        <button type="button" id="rightIn">右侧入</button>
+        <button type="button" id="leftOut">左侧出</button>
+        <button type="button" id="rightOut">右侧出</button>
+        <br>
+        <button type="button" id="sort">冒泡排序</button>
+    </form>
+    <ul id="outNum"></ul>
+    <script>
+        //定义变量
+        var text = document.getElementById("text");
+        var leftIn = document.getElementById("leftIn");
+        var rightIn = document.getElementById("rightIn");
+        var leftOut = document.getElementById("leftOut");
+        var rightOut = document.getElementById("rightOut");
+        var outNum = document.getElementById("outNum");
+        var liNum = outNum.childNodes;
+        var sort = document.getElementById("sort");
+
+        //数字纠错
+        function check() {
+            if (liNum.length >= 60) {
+                alert("队列元素数量超届！")
+                text.disabled = true;
+                return false;
+            }
+            else {
+                if (text.value == "" || isNaN(text.value)) {
+                    alert("请输入数字！");
+                    text.value = "";
+                    text.focus();
+                    return false;
+                }
+                else if (text.value < 10 || text.value > 100) {
+                    alert("请输入10-100内的数字！");
+                    text.value = "";
+                    text.focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //数字添加
+        function createLi(position) {
+            var newLi = document.createElement("li");
+            var newLiText = document.createTextNode(text.value);
+            newLi.appendChild(newLiText);
+            if (position == 0)
+                outNum.insertBefore(newLi, outNum.firstChild);
+            else
+                outNum.appendChild(newLi);
+            text.value = "";
+            clickRemove();
+        }
+        leftIn.onclick = function () {
+            if (check()) {
+                createLi(0);
+                draw();
+            }
+        }
+        rightIn.onclick = function () {
+            if (check()) {
+                createLi(1);
+                draw();
+            }
+        }
+
+        //数字删除
+        leftOut.onclick = function () {
+            alert("删除的数字为：" + outNum.firstChild.firstChild.nodeValue);
+            outNum.removeChild(outNum.firstChild);
+            text.disabled = false;
+        }
+        rightOut.onclick = function () {
+            alert("删除的数字为：" + outNum.lastChild.lastChild.nodeValue);
+            outNum.removeChild(outNum.lastChild);
+            text.disabled = false;
+        }
+        function clickRemove() {
+            for (let i = 0; i < liNum.length; i++) {
+                liNum[i].onclick = function () {
+                    alert("删除的数字为：" + this.firstChild.nodeValue);
+                    outNum.removeChild(this);
+                    text.disabled = false;
+                }
+            }
+        }
+
+        //排序
+        sort.onclick = bubble;
+        //冒泡算法
+        function bubble() {
+            var temp;
+            for (let i = 0; i < liNum.length - 1; i++) {
+                for (let j = 0; j < (liNum.length - i - 1); j++) {
+                    if (parseInt(liNum[j].firstChild.nodeValue) > parseInt(liNum[j + 1].firstChild.nodeValue)) {
+                        temp = liNum[j + 1].firstChild.nodeValue;
+                        liNum[j + 1].firstChild.nodeValue = liNum[j].firstChild.nodeValue;
+                        liNum[j].firstChild.nodeValue = temp;
+                    }
+                }
+            }
+            draw();
+        }
+
+        //画图
+        function draw() {
+            for (let i = 0; i < liNum.length; i++) {
+                liNum[i].style.marginTop = ((100 - liNum[i].firstChild.nodeValue) * 3) + "px";
+                liNum[i].style.height = (liNum[i].firstChild.nodeValue * 3) + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

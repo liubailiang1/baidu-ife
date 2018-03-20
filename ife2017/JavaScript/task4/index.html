@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>task4</title>
+        <style>
+            ul{
+                margin: 5px 5px 5px 0;
+                padding: 0;
+            }
+            li {
+                background-color: red;
+                margin: 0 5px;
+                padding: 10px;
+                display: inline-block;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" name="text" id="text" placeholder="请输入数字">
+        <button type="button" id="leftIn">左侧入</button>
+        <button type="button" id="rightIn">右侧入</button>
+        <button type="button" id="leftOut">左侧出</button>
+        <button type="button" id="rightOut">右侧出</button>
+        <ul id="outNum"></ul>
+        <script>
+            //定义变量
+            var text = document.getElementById("text");
+            var leftIn = document.getElementById("leftIn");
+            var rightIn = document.getElementById("rightIn");
+            var leftOut = document.getElementById("leftOut");
+            var rightOut = document.getElementById("rightOut");
+            var outNum = document.getElementById("outNum");
+            var liNum = outNum.childNodes;
+            
+            //数字纠错
+            function check(){
+                if(text.value == ""){
+                    alert("请输入数字！");
+                    text.focus();
+                    return false;
+                }
+                else if(isNaN(text.value)){
+                    alert("请输入数字！");
+                    text.focus();
+                    return false;
+                }
+                return true;  
+            }
+
+            //数字添加
+            leftIn.onclick = function(){
+                if(check()){
+                    var newLi = document.createElement("li");
+                    var newLiText = document.createTextNode(text.value);
+                    newLi.appendChild(newLiText);
+                    outNum.insertBefore(newLi, outNum.firstChild);
+                    clickRemove();
+                }
+            }
+            rightIn.onclick = function(){
+                if(check()){
+                    var newLi = document.createElement("li");
+                    var newLiText = document.createTextNode(text.value);
+                    newLi.appendChild(newLiText);
+                    outNum.appendChild(newLi);
+                    clickRemove();
+                }
+            }
+
+            //数字删除
+            leftOut.onclick = function(){
+                alert("删除的数字为：" + outNum.firstChild.firstChild.nodeValue);
+                outNum.removeChild(outNum.firstChild);
+            }
+            rightOut.onclick = function(){
+                alert("删除的数字为：" + outNum.lastChild.lastChild.nodeValue);
+                outNum.removeChild(outNum.lastChild);
+            }
+            function clickRemove(){
+                for (var i = 0; i < liNum.length; i++){
+                    liNum[i].onclick = function(){
+                        alert("删除的数字为：" + this.childNodes[0].nodeValue);
+                        outNum.removeChild(this);
+                    }
+                }
+            }   
+        </script>
+    </body>
+</html>
