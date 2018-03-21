@@ -1,12 +1,12 @@
-#百度前端学院
+# 百度前端学院
 
-##ife2018
+## ife2018
 
 等待中...
 
-##ife2017
+## ife2017
 
-###HTMLCSS学院
+### HTMLCSS学院
 
 任务地址：
 [小薇学院](http://ife.baidu.com/college/detail/id/9)
@@ -18,7 +18,7 @@
 task7|[代码](https://github.com/yuqy96/baidu-ife/tree/master/ife2017/html%20css/task7)|[预览](https://yuqy96.github.io/baidu-ife/ife2017/html%20css/task7/)
 task11|[代码](https://github.com/yuqy96/baidu-ife/tree/master/ife2017/html%20css/task11)|[预览](https://yuqy96.github.io/baidu-ife/ife2017/html%20css/task11/)
 
-###JavaScript学院
+### JavaScript学院
 
 任务地址：
 [斌斌学院](http://ife.baidu.com/college/detail/id/10)
