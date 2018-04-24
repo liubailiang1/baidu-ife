@@ -31,6 +31,7 @@
 > * 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
 > * 422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
 > * 500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
+>
 > 详见：[HTTP/1.1: Status Code Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
 
 5. 客户端（浏览器）接收到 HTTP 响应，通常第一个请求得到的 HTTP 响应的 body 里是 HTML 代码，于是对 HTML 代码开始解析；
@@ -50,6 +51,7 @@
 3. ASP.NET = SQL Server做数据库，IIS做Web Server
 4. MEAN = MongoDB做数据库，Express做Web Framework，Angular 做JavaScript 框架，Node.js 用于编写 Web Server。
 
-> 未来深入：
+### 未来深入：
+
 > 1. HTTP
 > 2. 在实践中体验整个过程
