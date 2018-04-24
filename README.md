@@ -2,7 +2,7 @@
 
 ## ife2018
 
-####零基础学院
+#### 零基础学院
 
 任务地址：[零基础学院](http://ife.baidu.com/college/detail/id/5)
 
@@ -12,6 +12,6 @@
 ---|---|---|---|---
 day1|第一天：为什么有那么多人要做前端？||[demo](https://yuqy96.github.io/baidu-ife)|
 
-##ife2017
+## ife2017
 
 [链接地址](https://yuqy96.github.io/baidu-ife/ife2017)
