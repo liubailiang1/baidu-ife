@@ -8,7 +8,7 @@
 
 说明：
 
-* `<tt> <i> <b> <big> <small>`等字体样式标签和`<em> <strong> <dfn> <code> <samp> <kbd> <var> <cite>`等短语标签，如果只是为了改变样式的话，建议使用样式表
+* `&lt;tt&gt; &lt;i&gt; &lt;b&gt; &lt;big&gt; &lt;small&gt;`等字体样式标签和`&lt;em&gt; &lt;strong&gt; &lt;dfn&gt; &lt;code&gt; &lt;samp&gt; &lt;kbd&gt; &lt;var&gt; &lt;cite&gt;`等短语标签，如果只是为了改变样式的话，建议使用样式表
 
 #### Web语义化
 
@@ -37,41 +37,41 @@
 
 * 链接是什么概念，对应什么标签？
 > 指从一个网页指向一个目标的连接关系
-> 1. \<link> 可以链接到一个外部样式表
-> 2. \<a> 超链接
+> 1. &lt;link&gt; 可以链接到一个外部样式表
+> 2. &lt;a&gt; 超链接
 
 * 常用标签都有哪些，都适合用在什么场景
-> \<div> 可用于划分网页的区域，表示页面的分栏，分离一个版块的正文、评论、文章等
-> \<p> 文本段落，不能包含其他块级元素
-> \<h1>~\<h6> 用于标题
-> \<a> \<img>
+> &lt;div&gt; 可用于划分网页的区域，表示页面的分栏，分离一个版块的正文、评论、文章等
+> &lt;p&gt; 文本段落，不能包含其他块级元素
+> &lt;h1&gt;~&lt;h6&gt; 用于标题
+> &lt;a&gt; &lt;img&gt;
 > 表单标签、列表标签
 
 * 表单标签都有哪些，对应着什么功能，都有哪些属性
 > [表单总结](https://www.jianshu.com/p/711c2c3386be)
-> \<form> 向服务器传输数据 action代表该表单数据要提交到的服务器地址，method表示提交方式
+> &lt;form&gt; 向服务器传输数据 action代表该表单数据要提交到的服务器地址，method表示提交方式
 > 
 ```HTML
-<!-- 常用输入框，用于文本输入 -->
-<input type="text" name="text" placeholder="请输入">
-<!-- 密码输入，非明文显示 -->
-<input type="password" name="text" placeholder="密码">
-<!-- 单选框，往往两个以上出现 -->
-<input type="radio" name="sex">男
-<input type="radio" name="sex">女
-<!-- 多选框 -->
-<input type="checkbox" name="hobby">旅游
-<input type="checkbox" name="hobby">宠物
-<!-- 按钮 -->
-<input type="button" value="点我">
-<!-- 文本域 -->
-<textarea name="comment" id="comment" cols="50" rows="10"></textarea>
-<!-- 下拉框 -->
-<select name="car" id="car">
-    <option value="1">宝马</option>
-    <option value="2">奔驰</option>
-    <option value="3" selected>特斯拉</option>
-</select>
+&lt;!-- 常用输入框，用于文本输入 --&gt;
+&lt;input type="text" name="text" placeholder="请输入"&gt;
+&lt;!-- 密码输入，非明文显示 --&gt;
+&lt;input type="password" name="text" placeholder="密码"&gt;
+&lt;!-- 单选框，往往两个以上出现 --&gt;
+&lt;input type="radio" name="sex"&gt;男
+&lt;input type="radio" name="sex"&gt;女
+&lt;!-- 多选框 --&gt;
+&lt;input type="checkbox" name="hobby"&gt;旅游
+&lt;input type="checkbox" name="hobby"&gt;宠物
+&lt;!-- 按钮 --&gt;
+&lt;input type="button" value="点我"&gt;
+&lt;!-- 文本域 --&gt;
+&lt;textarea name="comment" id="comment" cols="50" rows="10"&gt;&lt;/textarea&gt;
+&lt;!-- 下拉框 --&gt;
+&lt;select name="car" id="car"&gt;
+    &lt;option value="1"&gt;宝马&lt;/option&gt;
+    &lt;option value="2"&gt;奔驰&lt;/option&gt;
+    &lt;option value="3" selected&gt;特斯拉&lt;/option&gt;
+&lt;/select&gt;
 ```
 
 * ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子
@@ -80,3 +80,13 @@
 > dl 术语列表，dt表示术语，dd表示定义
 > 列表可用于制作导航
 
+PS：markdown几个转义字符：
+
+描述|实体名称|实体编号
+---|---|---
+&nbsp;|空格|&nbsp
+&lt;|小于号|&lt
+&gt;|大于号|&gt
+&amp;|与号|&amp
+&quot;|引号|&quot
+&apos;|撇号|&apos
