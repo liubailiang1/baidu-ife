@@ -30,10 +30,12 @@
 > DOCTYPE 文档类型，用来说明所用html的类型，指出应该用什么规则去解释文档
 
 * meta标签都用来做什么的？
-> 提供有关页面的元信息，常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。
+> 提供有关页面的元信息，常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。  
+> [meta标签总结](https://segmentfault.com/a/1190000004279791)
 
 * Web语义化是什么，是为了解决什么问题
-> 使用正确的标签，公认的class id，建立更优化的标准，方便机器、人读懂代码想要表达的意思。让爬虫等能更好的理解到HTML文档
+> 使用正确的标签，公认的class id，建立更优化的标准，方便机器、人读懂代码想要表达的意思。让爬虫等能更好的理解到HTML文档  
+> [HTML5语义化标签](http://www.html5jscss.com/html5-semantics-section.html)
 
 * 链接是什么概念，对应什么标签？
 > 指从一个网页指向一个目标的连接关系  
@@ -47,32 +49,30 @@
 > \<a> \<img>  
 > 表单标签、列表标签
 
-* 表单标签都有哪些，对应着什么功能，都有哪些属性
-> [表单总结](https://www.jianshu.com/p/711c2c3386be)  
+* 表单标签都有哪些，对应着什么功能，都有哪些属性 
 > \<form> 向服务器传输数据 action代表该表单数据要提交到的服务器地址，method表示提交方式
+>>
+常用输入框，用于文本输入  
+\<input type="text" name="text" placeholder="请输入">  
+密码输入，非明文显示  
+\<input type="password" name="text" placeholder="密码">  
+单选框，往往两个以上出现  
+\<input type="radio" name="sex">男  
+\<input type="radio" name="sex">女  
+多选框  
+\<input type="checkbox" name="hobby">旅游  
+\<input type="checkbox" name="hobby">宠物  
+按钮  
+\<input type="button" value="点我">  
+文本域  
+\<textarea name="comment" id="comment" cols="50" rows="10"></textarea>  
+下拉框  
+\<select name="car" id="car">  
+    \<option value="1">宝马\</option>  
+    \<option value="2" selected>奔驰\</option>  
+\</select>
 >
-```html
-<!-- 常用输入框，用于文本输入 -->
-<input type="text" name="text" placeholder="请输入">
-<!-- 密码输入，非明文显示 -->
-<input type="password" name="text" placeholder="密码">
-<!-- 单选框，往往两个以上出现 -->
-<input type="radio" name="sex">男
-<input type="radio" name="sex">女
-<!-- 多选框 -->
-<input type="checkbox" name="hobby">旅游
-<input type="checkbox" name="hobby">宠物
-<!-- 按钮 -->
-<input type="button" value="点我">
-<!-- 文本域 -->
-<textarea name="comment" id="comment" cols="50" rows="10"></textarea>
-<!-- 下拉框 -->
-<select name="car" id="car">
-    <option value="1">宝马</option>
-    <option value="2">奔驰</option>
-    <option value="3" selected>特斯拉</option>
-</select>
-```
+> [表单总结](https://www.jianshu.com/p/711c2c3386be) 
 
 * ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子
 > ol 有序列表
