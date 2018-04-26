@@ -58,3 +58,28 @@ text-align|文本对齐|left、right、center、justify|相对于盒子
 line-height|行高||[深入理解line-height](http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/)
 letter-spacing|字母间距||
 word-spacing|单词间距||
+text-indent|文本块中首行文本的缩进||
+
+<hr>
+#### 验证
+1. 什么是CSS，CSS是如何工作的  
+```
+CSS是向用户指定文档如何呈现的语言;
+浏览器将HTML和CSS转化成DOM，并显示DOM的内容
+```
+2. CSS的基本语法是怎样的  
+```css
+选择器 {
+	属性:属性值; //声明
+}
+```
+3. CSS选择器是什么概念，简单选择器和属性选择器是什么  
+```
+定位需要样式化的元素;
+简单选择器是基于元素类型(或其class id)直接匹配文档的一个或多个元素;
+属性选择器是根据元素的属性和属性值匹配元素
+```
+4. 文本样式都有哪些相关属性，对应哪些值  
+```
+见上方表格
+```
