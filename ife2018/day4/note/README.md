@@ -87,14 +87,19 @@ li p {
 
 ##### 伪类选择器
 
-```
-LVHA
-:focus 指示当前拥有焦点的元素
-:hover 指示鼠标指针停留在哪个元素上
-:active 指示被用户输入激活的元素
-:first-child 某元素的第一个子元素 
-```
-[p:first-child指的是某元素的第一个p元素](http://www.w3school.com.cn/tiy/t.asp?f=css_sel_firstchild)
+> CSS 伪类用于向某些选择器添加特殊的效果。  
+CSS 伪元素用于将特殊的效果添加到某些选择器。
+  
+两者区别在于: 伪类的效果可以通过添加一个实际的`类`来达到，而伪元素的效果则需要通过添加一个实际的`元素`才能达到
+
+###### 伪类
+![伪类](http://segmentfault.com/img/bVcccn)
+
+[p:first-child指的是p元素是某元素的第一个子元素](http://www.w3school.com.cn/tiy/t.asp?f=css_sel_firstchild)
+
+###### 伪元素
+
+![伪元素](http://segmentfault.com/img/bVccco)
 
 ##### 组合器
 
