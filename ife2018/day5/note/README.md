@@ -19,9 +19,9 @@ width + padding-right + border-right + margin-right
 `box-sizing`的值:
 
 ```css
-<!--默认值，标准盒子模型，只含内容区-->
+/* 默认值，标准盒子模型，只含内容区 */ 
 box-sizing:content-box;
-<!--width 和 height 属性包括内容，内边距和边框，但不包括外边距-->
+/* width 和 height 属性包括内容，内边距和边框，但不包括外边距 */ 
 box-sizing:border-box;
 ```
 
@@ -52,13 +52,13 @@ margin
 overflow的值:
 
 ```css
-/* 默认值。内容不会被修剪，会呈现在元素框之外 */
+/* 默认值。内容不会被修剪，会呈现在元素框之外  */
 overflow: visible;
-/* 内容会被修剪，并且其余内容不可见 */
+/* 内容会被修剪，并且其余内容不可见  */
 overflow: hidden;
-/* 内容会被修剪，浏览器会显示滚动条以便查看其余内容 */
+/* 内容会被修剪，浏览器会显示滚动条以便查看其余内容  */
 overflow: scroll;
-/* 由浏览器定夺，如果内容被修剪，就会显示滚动条 */
+/* 由浏览器定夺，如果内容被修剪，就会显示滚动条  */
 overflow: auto;
 ```
 
