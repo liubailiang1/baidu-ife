@@ -17,7 +17,7 @@ background-attachment|背景附着|scroll(默认)、fixed|
 background-size|背景图像大小|长度值、百分数值、cover、contain|
 background|背景简写||可按任意顺序放置
 
-<hr>
+----
 
 #### 边框 border
 
@@ -29,7 +29,7 @@ border-width|边框宽度||不支持百分比、默认为medium(3px)
 border-color|边框颜色|透明:transparent|默认颜色同color
 border-radius|边界圆角||
 
-<hr>
+----
 
 #### 列表 list
 
@@ -40,7 +40,7 @@ list-style-image|列表项图像|url()|可用background代替
 list-style-position|列表项位置|inside(文本内文本环绕)、outside(默认)、inherit|
 list-style|列表简写|顺序:list-style-type list-style-position list-style-image(可省略某个值)
 
-<hr>
+----
 
 #### 连接 a
 
@@ -59,7 +59,7 @@ a:active {color:#0000FF;}	/* 正在被点击的链接 */
 
 [制作导航条的方法](http://www.runoob.com/css/css-navbar.html)
 
-<hr>
+----
 
 #### 选择器(2)
 
