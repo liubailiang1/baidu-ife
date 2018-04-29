@@ -124,10 +124,10 @@ BFC:块级格式化上下文【在css3中叫Flow Root】是一个独立布局环
   
 什么样的元素会为其内容生成一个BFC呢？
   
-1. 浮动元素，即float:left|right  
-2. 绝对定位元素，即position:absolute|fixed  
-3. 块容器，即display:table-cell|table-caption|inline-block    
-4. 设置了除visible外的overflow值的块盒子，即overflow:hidden|scroll|auto
+1. 浮动元素，即float:left/right  
+2. 绝对定位元素，即position:absolute/fixed  
+3. 块容器，即display:table-cell/table-caption/inline-block    
+4. 设置了除visible外的overflow值的块盒子，即overflow:hidden/scroll/auto
 
 BFC特性：
 
