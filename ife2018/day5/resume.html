@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>day5</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="style_1.css" id="css">
+</head>
+<body>
+    <header>
+        <button onclick="num1()">一号简历</button>
+        <button onclick="num2()">二号简历</button>
+        <button onclick="num3()">三号简历</button>
+    </header>
+    <div class="page">
+        <div class="header">
+            <h1>简历</h1>
+        </div>
+        <div class="main">
+            <div class="part1">
+                <h2>基本信息</h2>
+                <div class="section-box">
+                    <p><em>姓名</em>张三</p>
+                    <p><em>性别</em>男</p>
+                    <p><em>应聘职位</em>Web前端工程师</p>
+                </div>
+            </div>
+            <div class="part2">
+                <h2>联系方式</h2>
+                <div class="section-box">
+                    <p><em>手机</em>12312341234</p>
+                    <p><em>Email</em><a href="mailto:joinefe@baidu.com">joinefe@baidu.com</a></p>
+                    <p><em>个人主页</em><a href="https://www.github.com/yuqy96">Github</a> </p>
+                </div>
+            </div>
+            <div class="part3">
+                <h2>能力描述</h2>
+                <div class="section-box">
+                    <div class="section">
+                        <h4>技术能力</h4>
+                        <p>熟练掌握HTML,CSS,JavaScript</p>
+                    </div>
+                    <div class="section">
+                        <h4>综合能力</h4>
+                        <p>良好的沟通，主动积极，努力勤奋</p>
+                    </div>
+                </div>
+            </div>
+            <div class="part4">
+                <h2>教育经历</h2>
+                <div class="section-box">
+                    <div class="section">
+                        <h4>本科</h4>
+                        <p>百度前端技术学院小薇学院</p>
+                    </div>
+                    <div class="section">
+                        <h4>研究生</h4>
+                        <p>百度前端技术学院大斌学院</p>
+                    </div>
+                </div>
+            </div>
+            <div class="part5">
+                <h2>项目经历</h2>
+                <div class="section-box">
+                    <div class="section">
+                        <h4>小度小度</h4>
+                        <p>作为前端工程师角色参与了ABC组件的开发</p>
+                    </div>
+                    <div class="section">
+                        <h4>SAN Doc</h4>
+                        <p>作为文档工程师参与了SAN Doc的编写</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function num1() {
+            document.getElementById("css").setAttribute("href", "style_1.css");
+            console.log("123")
+        }
+        function num2() {
+            document.getElementById("css").setAttribute("href", "style_2.css");
+        }
+        function num3() {
+            document.getElementById("css").setAttribute("href", "style_3.css");
+        }
+    </script>
+</body>
+
+</html>
