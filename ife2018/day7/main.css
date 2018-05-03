@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 60px;
+    width: 100%;
+    background-color: #333333;
+}
+
+.header_container,
+.banner_container,
+.nav_container,
+.content_container {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header_container h1 {
+    display: inline;
+    color: #fff;
+}
+
+.header_container ul {
+    float: right;
+    list-style: none;
+}
+
+.header_container li {
+    display: inline-block;
+}
+
+.header_container a{
+    color: #fff;
+}
+
+.banner {
+    height: 240px;
+    width: 100%;
+    background-color: #7bb74a;
+}
+
+.banner_container {
+    position: relative;
+}
+
+.banner_container ul {
+    list-style: none;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+}
+
+.banner li {
+    display: inline-block;
+    width: 25px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    text-align: center;
+    color: rgba(0, 0, 0, .3);
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.banner #banner_selected {
+    padding-top: 12px;
+    border: 1px solid rgba(0, 0, 0, .7);
+    color: rgba(0, 0, 0, .7);
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.nav {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav_container ul {
+    position: relative;
+    top: 1px;
+    list-style: none;
+    margin-top: 14px;
+    border: none;
+    font-size: 0;
+}
+
+.nav_container li {
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    border-right: 0;
+    border-radius: 15px 15px 0 0;
+    font-size: 12px;
+    background-color: #eee;
+}
+
+.nav_container li:last-child {
+    border-right: 1px solid #ddd;;
+}
+
+.nav_container #nav_selected {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+.content_container {
+    margin: 0 auto;
+}
+
+.cell_1,
+.cell_2,
+.cell_3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cell_1 div,
+.cell_2 div,
+.cell_3 div {
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    padding: 80px;
+    text-align: center;
+}
+
+.cell_1 div:last-child,
+.cell_2 div:last-child,
+.cell_3 div:last-child {
+    margin-right: 0;
+}
+
+.footer {
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #666;
+}
