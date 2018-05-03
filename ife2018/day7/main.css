@@ -39,7 +39,7 @@
 .banner {
     height: 240px;
     width: 100%;
-    background-color: #7bb74a;
+    background-color: #7bb84a;
 }
 
 .banner_container {
@@ -110,18 +110,14 @@
     margin: 0 auto;
 }
 
-.cell_1,
-.cell_2,
-.cell_3 {
+.cell {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
 }
 
-.cell_1 div,
-.cell_2 div,
-.cell_3 div {
+.cell div {
     flex: 1;
     box-sizing: border-box;
     border: 1px solid #ddd;
@@ -130,9 +126,7 @@
     text-align: center;
 }
 
-.cell_1 div:last-child,
-.cell_2 div:last-child,
-.cell_3 div:last-child {
+.cell div:last-child {
     margin-right: 0;
 }
 
