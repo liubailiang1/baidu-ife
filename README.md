@@ -14,7 +14,7 @@
 [第三天：让简历有点色彩](http://ife.baidu.com/course/detail/id/37)|css简介、选择器、font|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day3/index.html)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day3)|[note](ife2018/day3/note)
 [第四天，背景边框列表链接和更复杂的选择器](http://ife.baidu.com/course/detail/id/38)|选择器、border、background、list、a|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day4/index.html)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day4)|[note](ife2018/day4/note)
 [第五天和第六天 三种简历](http://ife.baidu.com/course/detail/id/40)|盒子模型、浮动|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day5)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day5/resume.html)|[note](ife2018/day5/note)
-[第七天到第八天：学习布局](http://ife.baidu.com/course/detail/id/42)|定位、flex、布局、居中|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day7)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day7)|[note](ife2018/day7/note)
+[第七天到第八天：学习布局](http://ife.baidu.com/course/detail/id/42)|定位、flex、布局、居中|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day7)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day7/layout)|[note](ife2018/day7/note)
 
 ----
 
