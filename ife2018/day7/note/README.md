@@ -75,8 +75,6 @@ position: fixed;
 
 ### 3.1 [布局方式](http://www.cnblogs.com/chaixiaozhi/p/8486647.html)
 
-![img](https://images2018.cnblogs.com/blog/1047894/201803/1047894-20180301063419313-637038703.png)
-
 #### 3.1.1 一列布局
 
 固定宽高，设置`margin: 0 auto; `水平居中
@@ -95,7 +93,8 @@ position: fixed;
 
 ##### 3.1.3.1 圣杯布局
 
-![img](https://images0.cnblogs.com/blog2015/688270/201504/201328573248955.png)
+![img](img/2.png)
+![img](img/4.png)
 
 ```html
 <header><h4>Header内容区</h4></header>
@@ -119,7 +118,8 @@ position: fixed;
 
 ##### 3.1.3.2 双飞翼布局
 
-![img](https://images0.cnblogs.com/blog2015/688270/201504/201533399644932.png)
+![img](img/3.png)
+![img](img/5.png)
 
 例子: (假设左右为200px)
 
