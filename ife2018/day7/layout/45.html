@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>day7</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .left, .right {
+            flex: 0 0 300px;
+            min-height: 300px;
+        }
+        .center {
+            flex: 1 1 auto;
+            background-color: yellow;
+            min-height: 300px;
+        }
+        .left {
+            background-color: red;
+        }
+        .right {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">左 宽度300px</div>
+    <div class="center">中 自适应 实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</div>
+    <div class="right">右 宽度300px</div>
+</div>
+</body>
+</html>
