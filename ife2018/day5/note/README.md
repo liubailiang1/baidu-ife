@@ -159,9 +159,9 @@ BFC特性：
 
 ```css
 .clearfix:after {
-	content: " ";  //content可以任意发挥
+	content: " ";  /* content可以任意发挥 */
 	display: block;
-	line-height: 0;  //height: 0也行
+	line-height: 0;  /* height: 0也行 */
 	clear: both;
 }
 .clearfix {

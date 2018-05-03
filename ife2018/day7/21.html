@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>day7</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .page {
+            zoom: 1;
+        }
+        .page:after {
+            content: " ";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        .left,
+        .right {
+            min-height: 300px;
+        }
+        .left {
+            float: left;
+            width: 300px;
+            background-color: red;
+        }
+        .right {
+            margin-left: 310px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="left">左 固定300px</div>
+    <div class="right">右 这边是自适应文本 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</div>
+</div>
+</body>
+</html>

@@ -1,14 +1,32 @@
-[1 实现一个两栏布局，左侧占30%宽度，右侧占70%宽度](#%e5%ae%9e%e7%8e%b0%e4%b8%80%e4%b8%aa%e4%b8%a4%e6%a0%8f%e5%b8%83%e5%b1%80%ef%bc%8c%e5%b7%a6%e4%be%a7%e5%8d%a030%25%e5%ae%bd%e5%ba%a6%ef%bc%8c%e5%8f%b3%e4%be%a7%e5%8d%a070%25%e5%ae%bd%e5%ba%a6)
-
-  [1.1 双float](#%e5%8f%8cfloat)
-  
-  [1.2 绝对定位](#绝对定位)
-  
-  [1.3 flex](#flex)
+* 1 实现一个两栏布局，左侧占30%宽度，右侧占70%宽度
+  * [1.1 双float](#1.1+%e5%8f%8cfloat)
+  * [1.2 绝对定位](#1.2+绝对定位)
+  * [1.3 flex](#1.3+flex)
+* 2 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化
+  * [2.1 float+margin](#2.1+float+margin)
+  * [2.2 float+BFC](#2.2+float+BFC)
+  * [2.3 absolute+margin](#2.3+absolute+margin)
+  * [2.4 flex](#2.4+flex)
+* 3 实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化
+  * 类似于上例
+* 4 实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化
+  * [4.1 浮动法](#4.1+浮动法)
+  * [4.2 定位法](#4.2+定位法)
+  * [4.3 圣杯](#4.3+圣杯)
+  * [4.4 双飞翼](#4.4+双飞翼)
+* 5 实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化
+  * 类似于上例
 
 ## 实现一个两栏布局，左侧占30%宽度，右侧占70%宽度
 
-### 双float
+```html
+<div class="page">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+```
+
+### 1.1 双float
 
 ```css
 .left, .right {
@@ -27,7 +45,7 @@
 
 示例: [demo](11.html)
 
-### 绝对定位
+### 1.2 绝对定位
 
 ```css
 .page {
@@ -55,7 +73,7 @@
 
 示例: [demo](12.html)
 
-### flex
+### 1.3 flex
 
 ```css
 .page {
@@ -75,5 +93,169 @@
 }
 ```
 
+示例: [demo](13.html)
 
+## 2. 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化
+
+```html
+<div class="page">
+    <div class="left">左 固定300px</div>
+    <div class="right">右 这边是自适应文本 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</div>
+</div>
+```
+
+### 2.1 float+margin
+
+```css
+.page {
+    zoom: 1;
+}
+.page:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.left,
+.right {
+    min-height: 300px;
+}
+.left {
+    float: left;
+    width: 300px;
+    background-color: red;
+}
+.right {
+    margin-left: 300px
+    background-color: yellow;
+}
+```
+
+示例: [demo](21.html)
+
+### 2.2 float+BFC
+
+```css
+.page {
+    zoom: 1;
+}
+.page:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.left,
+.right {
+    min-height: 300px;
+}
+.left {
+    float: left;
+    width: 300px;
+    background-color: red;
+    margin-right: 10px;
+}
+.right {
+    overflow: hidden;
+    background-color: yellow;
+}
+```
+
+示例: [demo](22.html)
+
+### 2.3 absolute+margin
+
+```css
+.page {
+    position: relative;
+}
+.left,
+.right {
+    min-height: 300px;
+}
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background-color: red;
+}
+.right {
+    margin-left: 310px;
+    background-color: yellow;
+}
+```
+
+示例: [demo](23.html)
+
+### 2.4 flex
+
+```css
+.page {
+    display: flex;
+}
+.left,
+.right {
+    min-height: 300px;
+}
+.left {
+    flex: 0 0 300px;
+    background-color: red;
+}
+.right {
+    flex: 1 1 auto;
+    background-color: yellow;
+}
+```
+
+示例: [demo](24.html)
+
+## 3 实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化
+
+类似于前例
+
+## 4 实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化
+
+### 4.1 浮动法
+
+```html
+```
+
+```css
+```
+
+示例: [demo](41.html)
+
+### 4.2 定位法
+
+```html
+```
+
+```css
+```
+
+示例: [demo](42.html)
+
+### 4.3 圣杯
+
+```html
+```
+
+```css
+```
+
+示例: [demo](43.html)
+
+### 4.4 双飞翼
+```html
+```
+
+```css
+```
+
+示例: [demo](44.html)
+
+## 5 实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化
+
+类似于上例
 
