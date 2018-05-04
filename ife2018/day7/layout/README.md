@@ -3,9 +3,9 @@
   * [1.2 绝对定位](#12-绝对定位)
   * [1.3 flex](#13-flex)
 * 2 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化
-  * [2.1 float+margin](#21-float+margin)
-  * [2.2 float+BFC](#22-float+BFC)
-  * [2.3 absolute+margin](#23-absolute+margin)
+  * [2.1 float+margin](#21-floatmargin)
+  * [2.2 float+BFC](#22-floatbfc)
+  * [2.3 absolute+margin](#23-absolutemargin)
   * [2.4 flex](#24-flex)
 * 3 实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化
   * 类似于上例
