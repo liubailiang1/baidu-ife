@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    height: 100%;
+    min-width: 970px;
+}
+
+header {
+    overflow: hidden;
+    height: 990px;
+    background: url(img/background.png) no-repeat center center;
+    background-size: 1600px 990px;
+}
+
+header h1 {
+    margin-top: 180px;
+    font-size: 62px;
+    color: #fff;
+    text-align: center;
+}
+
+header p {
+    width: 730px;
+    margin: 90px auto 100px auto;
+    font-size: 20px;
+    text-align: center;
+    color: #d0d0cf;
+}
+
+header form{
+    overflow: hidden;
+    margin: 0 auto;
+    width: 970px;
+    border: 1px solid #43413d;
+    text-align: center;
+}
+
+header h4 {
+    margin: 60px 0 20px 0;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+header h6 {
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.register_input {
+    display: inline-block;
+    margin: 40px 0 50px 0;
+}
+
+.register_input input {
+    box-sizing: border-box;
+    width: 292px;
+    height: 50px;
+    margin: 0 15px;
+    padding: 0 20px;
+    border: 1px solid #43413d;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.register_input button {
+    box-sizing: border-box;
+    width: 125px;
+    height: 50px;
+    margin: 0 15px;
+    background-color: #fff;
+}
+
+.part1 {
+    padding: 90px 0;
+}
+
+.part1 h6 {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.part1 h1 {
+    width: 670px;
+    margin: 40px auto 10px auto;
+    font-size: 42px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.banner_container:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.banner_container {
+    width: 970px;
+    margin: 0 auto;
+    zoom: 1;
+}
+
+.banner_cell {
+    margin-top: 80px;
+}
+
+.banner_cell h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.banner_cell p {
+    font-size: 16px;
+}
+
+.banner_cell img {
+    height: 40px;
+    float: left;
+}
+
+.banner_cell .cell_part {
+    margin-left: 60px;
+}
+
+.banner_container .banner_cell {
+    height: 120px;
+    width: 440px;
+}
+
+.banner_cell.cell_left {
+    float: left;
+    position: relative;
+    left: -35px;
+}
+
+.banner_cell.cell_right {
+    float: right;
+    position: relative;
+    right: -35px;
+}
+
+.part2 {
+    position: relative;
+    box-sizing: border-box;
+    height: 800px;
+    padding: 100px 0;
+    background: url("img/background-2.png") no-repeat center center;
+    background-size: 1600px 800px;
+}
+
+.part2 section {
+    width: 970px;
+    margin: 0 auto;
+}
+
+.part2 h1 {
+    width: 370px;
+    margin: 80px 0 100px 0;
+    font-size: 36px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.part2 p {
+    width: 370px;
+    margin: 100px 0 60px 0;
+    color: #d4d6d4;
+}
+
+.part2 div {
+    position: absolute;
+    top: 100px;
+    right: 0;
+}
+
+.part2 button {
+    width: 240px;
+    height: 60px;
+    border: 1px solid #808080;
+}
+
+button#try {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+}
