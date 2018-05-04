@@ -16,7 +16,7 @@ header {
     overflow: hidden;
     height: 990px;
     background: url(img/background.png) no-repeat center center;
-    background-size: 1600px 990px;
+    background-size: 990px 1600px;
 }
 
 header h1 {
@@ -156,7 +156,7 @@ header h6 {
     height: 800px;
     padding: 100px 0;
     background: url("img/background-2.png") no-repeat center center;
-    background-size: 1600px 800px;
+    background-size: 800px 1600px;
 }
 
 .part2 section {
