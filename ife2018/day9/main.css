@@ -9,14 +9,13 @@ button {
 
 body {
     height: 100%;
-    min-width: 970px;
 }
 
 header {
     overflow: hidden;
     height: 990px;
     background: url(img/background.png) no-repeat center center;
-    background-size: 990px 1600px;
+    background-size: 1600px 990px;
 }
 
 header h1 {
@@ -140,23 +139,20 @@ header h6 {
 
 .banner_cell.cell_left {
     float: left;
-    position: relative;
-    left: -35px;
 }
 
 .banner_cell.cell_right {
     float: right;
-    position: relative;
-    right: -35px;
 }
 
 .part2 {
     position: relative;
+    overflow: hidden;
     box-sizing: border-box;
     height: 800px;
     padding: 100px 0;
     background: url("img/background-2.png") no-repeat center center;
-    background-size: 800px 1600px;
+    background-size: 1600px 800px;
 }
 
 .part2 section {
@@ -181,7 +177,7 @@ header h6 {
 .part2 div {
     position: absolute;
     top: 100px;
-    right: 0;
+    left: 55%;
 }
 
 .part2 button {
