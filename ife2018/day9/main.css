@@ -184,6 +184,7 @@ header h6 {
     width: 240px;
     height: 60px;
     border: 1px solid #808080;
+    background-color: #fff;
 }
 
 button#try {
