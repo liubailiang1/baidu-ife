@@ -17,3 +17,37 @@
 ### 切图方法
 
 [https://www.cnblogs.com/w-wanglei/p/5598336.html](https://www.cnblogs.com/w-wanglei/p/5598336.html)
+
+## 透明
+
+1. css3的opacity:x，x 的取值从 0 到 1，如opacity: 0.8
+2. css3的rgba(red, green, blue, alpha)，alpha的取值从 0 到 1，如rgba(255,255,255,0.8)
+3. IE专属滤镜 filter:Alpha(opacity=x)，x 的取值从 0 到 100，如filter:Alpha(opacity=80)
+
+## 过渡效果 `transition`
+
+> 我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。
+
+CSS transform 属性 , 只对 `block` 级元素生效！
+
+示例:
+
+```css
+div
+{
+transition: width 2s;
+-moz-transition: width 2s;	/* Firefox 4 */
+-webkit-transition: width 2s;	/* Safari 和 Chrome */
+-o-transition: width 2s;	/* Opera */
+}
+```
+
+值:
+
+属性|描述
+---|---
+transition|简写属性，用于在一个属性中设置四个过渡属性。
+transition-property|规定应用过渡的 CSS 属性的名称。
+transition-duration|定义过渡效果花费的时间。默认是 0。
+transition-timing-function|规定过渡效果的时间曲线。默认是 "ease"。
+transition-delay|规定过渡效果何时开始。默认是 0。

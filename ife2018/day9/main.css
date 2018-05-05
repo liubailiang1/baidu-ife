@@ -305,13 +305,18 @@ p.part5_title {
     bottom: 0;
     left: 0;
     right: 0;
-    display: none;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
     text-align: center;
-    background-color: rgba(0, 0, 0, .6);
 }
 
 .part5_cell:hover .part5_hover{
-    display: block;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .7);
+    transition: all .75s;
+    -moz-transition: all .75s;	/* Firefox 4 */
+    -webkit-transition: all .75s;	/* Safari 和 Chrome */
+    -o-transition: all .75s;	/* Opera */
 }
 
 .part5_hover h4 {
