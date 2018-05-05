@@ -14,7 +14,7 @@ background-image|背景图像|url(...)、渐变: linear-gradient(to 渐变的方
 background-repeat|背景重复|repeat(默认)、repeat-x、repeat-y、no-repeat|
 background-position|背景定位|关键字、百分数值、长度值|坐标系为x坐标从左到右,y坐标从上到下;可以用于[雪碧图](http://www.imooc.com/learn/93)
 background-attachment|背景附着|scroll(默认)、fixed|
-background-size|背景图像大小|长度值、百分数值、cover、contain|
+background-size|背景图像大小|长度值、百分数值、cover、contain [点击查看示例](http://www.w3school.com.cn/tiy/c.asp?f=css_background-size&p=7)|
 background|背景简写||可按任意顺序放置
 
 ----
