@@ -202,3 +202,9 @@ BFC特性：
 
 1. float
 2. display:table-cell/inline-block
+
+----
+
+#### 3 侧边栏分栏高度相等
+
+[使分栏高度一致的纯CSS解决办法](http://www.zhangxinxu.com/wordpress/2010/03/%E7%BA%AFcss%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%86%E6%A0%8F%E9%AB%98%E5%BA%A6%E8%87%AA%E5%8A%A8%E7%9B%B8%E7%AD%89/)
