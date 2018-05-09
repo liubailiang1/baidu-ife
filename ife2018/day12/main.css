@@ -235,9 +235,15 @@ li {
 }
 
 
+.card-container {
+    margin-top: 70px;
+    overflow: auto;
+    height: calc(100% - 70px);
+}
+
+
 .chat .chat-box {
     float: left;
-    overflow: auto;
     width: 400px;
     height: calc(100% - 80px);
     box-sizing: border-box;
@@ -246,8 +252,11 @@ li {
 
 .chat-box .search {
     box-sizing: border-box;
+    position: fixed;
+    left: 350px;
+    top: 80px;
     height: 70px;
-    width: 100%;
+    width: 400px;
     border-bottom: 1px solid #eef0f1;
     padding-top: 17px;
     text-align: center;
@@ -279,7 +288,6 @@ li {
 
 .chat .chat-content {
     box-sizing: border-box;
-    overflow-y: auto;
     overflow-x: hidden;
     margin-left: 400px;
     height: calc(100% - 80px);
@@ -354,7 +362,10 @@ li {
 
 .chat-content .content-header {
     box-sizing: border-box;
-    position: relative;
+    position: fixed;
+    top: 80px;
+    left: 750px;
+    right: 0;
     height: 70px;
     padding: 0 30px;
     border-bottom: 1px solid #eef0f1;
@@ -418,6 +429,10 @@ li {
 
 
 .content-main {
+    height: calc(100% - 164px);
+    overflow: auto;
+    margin-top: 70px;
+    margin-bottom: 54px;
     padding: 20px 30px;
 }
 
@@ -497,6 +512,13 @@ li {
     margin-top: 25px;
 }
 
+
+.content-input {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    left: 780px;
+}
 
 .content-input img {
     cursor: pointer;
