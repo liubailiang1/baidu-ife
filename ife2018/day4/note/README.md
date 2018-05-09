@@ -10,7 +10,7 @@
 属性|说明|值|备注
 ---|---|---|---
 background-color|背景色||建议加上，作为后备，以防背景图像无法加载
-background-image|背景图像|url(...)、渐变: linear-gradient(to 渐变的方向,开始的颜色,结尾的颜色)|渐变可以在中途选择其他的点
+background-image|背景图像|url(...)、渐变: linear-gradient(to 渐变的方向,开始的颜色,结尾的颜色)|渐变可以在中途选择其他的点，渐变不能用于background-color、color
 background-repeat|背景重复|repeat(默认)、repeat-x、repeat-y、no-repeat|
 background-position|背景定位|关键字、百分数值、长度值|坐标系为x坐标从左到右,y坐标从上到下;可以用于[雪碧图](http://www.imooc.com/learn/93)
 background-attachment|背景附着|scroll(默认)、fixed|
