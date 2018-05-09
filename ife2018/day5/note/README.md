@@ -1,13 +1,13 @@
-## day5~6 2018.4.28~2018.4.29
+# day5~6 2018.4.28~2018.4.29
 
-#### 1. 盒子模型
+## 1. 盒子模型
 
 ![盒子模型](https://mdn.mozillademos.org/files/13647/box-model-standard-small.png)
 
 盒子的宽度 = margin-left + border-left + padding-left + 
 width + padding-right + border-right + margin-right
 
-##### 1.1 内容区
+### 1.1 内容区
 
 `width`和`height`是框内容显示的区域——包括框内的文本内容，以及表示嵌套子元素的其他框
 
@@ -25,15 +25,15 @@ box-sizing:content-box;
 box-sizing:border-box;
 ```
 
-##### 1.2 内边距
+### 1.2 内边距
 
 padding
 
-##### 1.3 边框
+### 1.3 边框
 
 [border 详见day3的笔记](https://yuqy96.github.io/baidu-ife/ife2018/day4/note/)
 
-##### 1.4 外边框
+### 1.4 外边框
 
 margin
 
@@ -43,7 +43,7 @@ margin
 >3. 空块级元素的margin合并
 
 
-##### 1.5 注意点
+### 1.5 注意点
 
 1. 框的高度不能使用百分比长度
 2. border不能使用百分比长度
@@ -62,7 +62,7 @@ overflow: scroll;
 overflow: auto;
 ```
 
-##### 1.6 框类型 `display`
+### 1.6 框类型 `display`
 
 值|说明
 ---|---
@@ -73,22 +73,20 @@ table|像处理table布局那样处理非table元素，而不是滥用HTML的&lt
 flex|处理一些困扰CSS已久的一些传统布局问题，例如布置一系列弹性等宽容器或者垂直居中内容。
 grid|给出一种简单实现CSS网格系统的方式，而在传统上它依赖于一些棘手难以处理的CSS网格框架
 
-----
+## 2.浮动 `float`
 
-#### 2.浮动 `float`
-
-##### 2.1 浮动的背景和工作原理
+### 2.1 浮动的背景和工作原理
 
 浮动的最初是用来**让文字环绕图片**, 所以我能能推出:  
 浮动会**脱离**正常的文档流，并吸附到其父容器左边，正常布局中位于浮动元素下的内容会**围绕**着浮动元素
 
-##### 2.2 浮动的块状性和去空格
+### 2.2 浮动的块状性和去空格
 
 > 设置float属性后，元素实际上会inline-block块状化
 
 > 多个img都浮动会去除掉他们间的空格
 
-##### 2.3 浮动的包裹性
+### 2.3 浮动的包裹性
 
 包裹性指的是元素尺寸刚好容纳内容, 表现得就像`diaplay:inline-block`一样
 
@@ -100,7 +98,7 @@ position:absolute/fixed/sticky
 overflow:hidden/scroll
 ```
 
-##### 2.4 浮动的破坏性
+### 2.4 浮动的破坏性
 
 会使父元素**高度塌陷**——为了实现文字环绕效果
 
@@ -113,15 +111,15 @@ position:absolute/fixed/sticky
 
 怎么解决破坏性带来的问题呢？
 
-##### 2.5 清除浮动 (clearfix hack)
+### 2.5 清除浮动 (clearfix hack)
 
-###### 2.5.1 投机取巧法
+### 2.5.1 投机取巧法
 
 在父元素底部加上`<div style="clear:both;"></div>`
 
 虽说兼容性好，但是浪费一个标签，违反了**语义化**，不推荐
 
-###### 2.5.2 overflow + zoom法
+### 2.5.2 overflow + zoom法
 
 ----
 补充知识: BFC(Block Formatting Context)
@@ -153,7 +151,7 @@ BFC特性：
 
 方法不错，但是可能内容会被裁减掉，可以偶尔用用
 
-###### 2.5.3 after + zoom法
+### 2.5.3 after + zoom法
 
 看一下2.5.1，虽然不错，但是违反语义化; 所以就想到了通过CSS来添加子元素，不修改HTML代码 —— `:after`选择符
 
@@ -171,11 +169,11 @@ BFC特性：
 
 这个方法最佳, 推荐这个方法
 
-##### 2.5 浮动布局
+### 2.5 浮动布局
 
 > 转发自 [CSS深入理解之float浮动(张鑫旭)](https://www.imooc.com/learn/121)
 
-###### 2.5.1 单侧尺寸固定的流体布局
+### 2.5.1 单侧尺寸固定的流体布局
 
 法一: 改变DOM位置:
 
@@ -194,7 +192,7 @@ BFC特性：
 2. padding-right/margin-right
 3. width+float+margin(负)
 
-###### 2.5.2 两侧都适应的流体布局
+### 2.5.2 两侧都适应的流体布局
 
 > 原理是左栏浮动，右栏生成BFC，根据BFC特性与浮动元素相邻的、创建了BFC的元素，都不能与浮动元素相互覆盖。
 
@@ -203,8 +201,7 @@ BFC特性：
 1. float
 2. display:table-cell/inline-block
 
-----
 
-#### 3 侧边栏分栏高度相等
+## 3 侧边栏分栏高度相等
 
 [使分栏高度一致的纯CSS解决办法](http://www.zhangxinxu.com/wordpress/2010/03/%E7%BA%AFcss%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%88%86%E6%A0%8F%E9%AB%98%E5%BA%A6%E8%87%AA%E5%8A%A8%E7%9B%B8%E7%AD%89/)
