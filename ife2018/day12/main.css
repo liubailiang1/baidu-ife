@@ -430,7 +430,7 @@ li {
 
 
 .content-main {
-    height: calc(100% - 164px);
+    height: calc(100% - 184px);
     overflow: auto;
     margin-top: 70px;
     margin-bottom: 54px;
@@ -439,6 +439,10 @@ li {
 
 .content-main .content-card {
     margin-bottom: 25px;
+}
+
+.content-card:last-child {
+    margin-bottom: 0;
 }
 
 .content-card>img {
