@@ -17,6 +17,7 @@
 [第七天到第八天：学习布局](http://ife.baidu.com/course/detail/id/42)|定位、flex、布局、居中|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day7)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day7/layout)|[note](ife2018/day7/note)
 [第九天到第十一天：来做一个漂亮的网站](http://ife.baidu.com/course/detail/id/43)|切图、布局、透明、过渡|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day9)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day9)|[note](ife2018/day9/note)
 [第十二天到第十五天，复杂页面实现](http://ife.baidu.com/course/detail/id/44)|CSS综合|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day12)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day12)|[note](ife2018/day12/note)
+[第十六天，开始感受JS的乐趣](http://ife.baidu.com/course/detail/id/45)|JavaScript简介、JavaScript使用|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day16)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day16)|[note](ife2018/day16/note)
 
 ----
 
