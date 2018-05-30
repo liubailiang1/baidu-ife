@@ -338,6 +338,7 @@ toUpperCase()/  toLocaleUpperCase()|大写|
 toLowerCase()/  toLocaleLowerCase()|小写|
 march()|包含匹配结果的数组|
 search()|第一个匹配【参数】的子串开始位置 / -1|
+split()|以【参数】分隔后的字符串
 localeCompare()|字符串排在【参数】前: -1; 等于: 0; 后: 1|中国以首字母拼音
 fromCharCode()|所有参数编码转换后的字符串|
 
