@@ -1,4 +1,4 @@
-# day22~24 2018.5.21
+# day22~24 2018.5.21/5.30
 
 ## 1. 基本数据类型
 
@@ -239,5 +239,113 @@ num.reduce(function(prev, cur, index, array)) {
 };
 /*prev:前一个值  cur:当前值  index:该项在数组的位置  array:数组对象*/
 ```
+
+### 2.3 Date类型
+
+> 自UTC1970年1月1日零时开始的毫秒数
+
+#### 2.3.1 创建日期对象
+
+```javascript
+var now = new Date();
+```
+
+#### 2.3.2 获得UTC毫秒数
+
+```javascript
+//将字符串转为毫秒数的方法
+//无法表示则为NaN。new Date()时会直接转换
+Date.parse("May 25, 2004")
+//参数: 年份(必须)、基于0的月份(必须)、月中的天数、小时、分钟、秒、毫秒。new Date()时会以本地时区创建
+Date.UTC(2000，0):
+```
+
+> 月份表示是基于 0 的月份!
+
+```javascript
+Date.Now();  //调用方法时的日期和毫秒数
+```
+
+#### 2.3.3 日期方法
+
+方法|返回
+---|---
+toString()|带有时区信息的日期和时间字符串
+toLocaleString()|本地格式的字符串
+valueOf()|毫秒数
+toDateString()|年、月、日、星期几
+toTimeString()|时、分、秒、时区
+toLocaleDateString()|本地年、月、日、星期几
+toLocaleTimeString()|本地时、分、秒、时区
+toUTCString()|完整的UTC日期
+……|[其他方法](http://www.w3school.com.cn/jsref/jsref_obj_date.asp)
+
+### 2.4 基本包装类型(Boolean、Number、String)
+
+1. 每当读取一个基本类型时，后台都会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据（只存在于**一行代码**的执行瞬间）:  
+①创建Boolean、Number、String类型的一个实例   
+②在实例上调用方法  
+③销毁实例
+2. 基本包装类型的实例调用typeof都会返回"object"，Boolean()都为true
+
+#### 2.4.1 Boolean类型
+
+方法:
+
+方法|返回
+---|---
+valueOf()|true/false
+toString() / toLocaleString()|"true"/"false"
+
+#### 2.4.2 Number类型
+
+方法:
+
+方法|返回
+---|---
+valueOf()|数值
+toString() / toLocaleString()|字符串数值
+toFixed()|按参数指定的小数位返回*字符串*(四舍五入)
+toExponential()|按参数指定的小数位返回指数字符串
+toPrecision()|按参数指定共N位数字的最合适格式
+
+#### 2.4.3 String类型
+
+取字符:
+
+charAt() / 方括号
+
+属性:
+
+方法|说明
+---|---
+length|总字符数
+
+方法:
+
+方法|返回|备注
+---|---|---
+charAt()|字符串的第【参数】个字符|
+charCodeAt()|字符串的第【参数】个字符的编码|
+concat()|原本字符串加每个参数连接组成的新字符串|不如使用`+`操作符
+slice()|[【参数1】,【参数2(可选)】)区间的字符串|负值与字符串长度相加
+substr()【弃用】|【参数1】开始，长度为【参数二(可选)】的字符串|负的第一个参数加字符串长度，负的第二个参数转为0
+substring()|[【参数1】,【参数2(可选)】)区间的字符串|负参转为0
+indexOf()|从左到右，从【参数二(可选)】索引开始查找的【参数一】所指定的子字符串的位置索引/-1|
+lastIndexOf()|从右到左，从【参数二(可选)】索引开始查找的【参数一】所指定的子字符串的位置索引/-1|
+trim()|删掉前置后置空格后的字符串|
+toUpperCase()/  toLocaleUpperCase()|大写|
+toLowerCase()/  toLocaleLowerCase()|小写|
+march()|包含匹配结果的数组|
+search()|第一个匹配【参数】的子串开始位置 / -1|
+localeCompare()|字符串排在【参数】前: -1; 等于: 0; 后: 1|中国以首字母拼音
+fromCharCode()|所有参数编码转换后的字符串|
+
+
+----
+
+### 正则(待看)
+
+p127
 
 ## 3. 基本类型与引用类型的区别
