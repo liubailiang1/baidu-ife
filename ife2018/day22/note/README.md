@@ -7,7 +7,7 @@
 
 ### 1.1 `Undefined`
 
-> 在使用var声明变量但为对其初始化时，这个变量就是undefined
+> 在使用var声明变量但未对其初始化时，这个变量就是`undefined`
 
 Undefined 和 not defined 的区别:
 
@@ -91,6 +91,12 @@ Undefined|NaN
 
 类似于`parseInt()`。只用于解析十进制，十六进制将被解析为0
 
+ |Number()|parseInt()|parseFloat()
+---|---|---|---
+十进制|√|√|√
+八进制|×|√(带参数)|×
+十六进制|√|√|0
+
 ### 1.5 `String`
 
 "" / ''  
@@ -123,5 +129,115 @@ valueOf()|对象的字符串、数值、布尔值表示
 
 > **引用类型是按引用访问的**
 
+> **引用类型(类、对象定义)**是一种数据结构，将数据和功能组织在一起  
+> **引用类型的值(对象)**是引用类型的实例
+
+创建对象: **new** + 构造函数
+
+### 2.1 Object类型
+
+#### 2.1.1 创建
+ 
+```javascript
+var person = new Object();  //new方法
+var person = {};  //字面量表示法(推荐)
+```
+
+> 使用字面量表示法时，各属性名都会被自动转换为字符串
+
+#### 2.1.2 访问
+
+```javascript
+person["name"];  //方括号,可处理变量/有特殊字符的属性
+person.name;  //点表示法(推荐)
+```
+
+### 2.2 Array类型
+
+> 与其他语言的区别:  
+> ①可以保存任何类型数据; ②大小是动态调整的
+
+#### 2.2.1 数组创建
+
+```javascript
+var color = new Array();
+var color = new Array(3);
+var color = new Array("red", "blue", "green");
+var color = [];
+```
+
+#### 2.2.2 数组读取
+
+```javascript
+color[2] = "green";
+```
+
+使用方括号，并提供响应值的基于0的索引；当设置的索引超出现有项数，自动增加到该索引值加1的长度
+
+#### 2.2.3 数组长度
+
+`length`属性:  
+不是只读的，可以通过设置，从末位移除或添加新项
+
+```javascript
+color[color.length] = "red";  //末位添加新项
+```
+
+#### 2.2.4 数组判断
+
+方法|适用情况
+---|---
+value instanceof Array|一个全局作用域/一个网页
+Array.isArray(value)|ES5
+
+#### 2.2.5 数组方法
+
+方法|功能|返回
+---|---|---
+valueOf()|n/a|本身
+toString()|n/a|以逗号分隔每一项的字符串
+toLocaleString()|n/a|同toString()
+join()|n/a|以参数分隔每一项的字符串
+push()|末尾加参数|修改后的length
+pop()|去末尾，长度减1|移除的项
+shift()|去前端，长度减1|移除的项
+unshift()|前端加参数|修改后length
+reverse()|反转数组|反转后的数组
+sort()|有参数:根据比较函数(小于负数, 等于0, 大于正数)参数决定排序；无参数:toString()后字符串排序|排序后的数组
+concat()|n/a|当前数组副本，副本末位添加参数后的数组
+slice()|n/a|[参数1, 参数2/末位)区间元素构成的数组
+splice()|删除【参数一】位置开始的 前【参数二】个项，并添加【其余参数】|被删除掉的项
+indexOf()|n/a|从左到右，从【参数二(可选)】索引开始查找的【参数一】所指定的项的位置索引/-1
+lastIndexOf()|n/a|从右到左，从【参数二(可选)】索引开始查找的【参数一】所指定的项的位置索引/-1
+
+##### ES5定义的迭代方法:
+
+方法|返回|功能
+---|---|---
+every()|函数对每一项都返回true->true|对所有项都运行给定函数
+some()|对任一项返回true->true|对所有项都运行给定函数
+filter()|函数会返回true的项组成的数组|对所有项都运行给定函数
+forEach()|n/a|对所有项都运行给定函数
+map()|每次调用结果返回的数组|对所有项都运行给定函数
+
+
+```javascript
+var num = [1, 2, 3];
+num.every(function(item, index, array)){};
+/*item:数组项的值  index:该项在数组的位置  array:数组对象*/
+```
+
+##### ES5定义的归并方法:
+
+> 每次函数返回值将作为第一个参数传给下一项  
+> ruduce()为从左至右; reduceRight()为从右至左
+
+```javascript
+var num = [1, 2, 3];
+num.reduce(function(prev, cur, index, array)) {
+	return prev + cur;
+};
+/*prev:前一个值  cur:当前值  index:该项在数组的位置  array:数组对象*/
+```
 
 ## 3. 基本类型与引用类型的区别
