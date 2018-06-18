@@ -6,6 +6,20 @@
 </head>
 <body>
     <script>
-
+        var table = document.createElement("table");
+        table.border = "5";
+        document.body.appendChild(table);
+        for (let i = 1; i < 10; i++) {
+            var str = "";
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (let j = 1; j <= i; j++) {
+                var td = document.createElement("td");
+                td.innerHTML = (j + "*" + i + "=" + (j * i));
+                tr.appendChild(td);
+                str += (j + "*" + i + "=" + (j * i)) + " ";
+            }
+            console.log(str)
+        }
     </script>
 </body>
