@@ -104,7 +104,8 @@ writeln()|换行写入, 如果在文档加载结束后调用会重写页面
 
 ## 4 Element类型
 
-> 对元素标签名、子节点、特性访问
+> nodeType == 1  
+> 对元素标签名、子节点、**特性访问**
 
 ### 4.1 元素特性
 
@@ -115,8 +116,70 @@ title|title特性
 lang|元素的语言代码
 dir|元素的方向, ltr/rtl
 className|class特性
+...|...
 
 > 以上内容均可读可写
 
 ### 4.2 操作特性
 
+方法|说明
+---|---
+getAttritube()|取得【参数】的特性; 返回字符串; **通常只在取得自定义特性值下使用**
+setAttritube()|设置【参数1】特性值为【参数2】; **推荐通过属性来设置特性**
+removeAttritube()|删除元素的特性
+
+### 4.3 atrributes属性
+
+属性|说明
+---|---
+attributes|包含一个**NamedNodeMap**, 包含每一个Attr节点
+
+> 该属性不太方便, 通常不使用, 可以用来遍历某元素的特性
+
+### 4.4 创建元素
+
+> 使用document的`createElement()`方法可以创建元素
+
+```javascript
+var div = document.createElement("div");
+div.id = "myDiv";
+div.className = "box";
+document.body.appendChild(div);
+```
+
+## 5 Text类型
+
+> nodeType == 3
+
+### 5.1 操作节点文本
+
+方法|说明
+---|---
+appendData(text)|将text添加到末尾
+deleteData(offset, count)|从offset指定的位置删除count个字符
+insertData(offset, text)|在offset指定的位置插入text
+replaceData(offset, count, text)|用text替换offset指定的位置到offset+count的文本
+splitText(offset)|从offset分成两个文本节点
+substringData(offset, count)|提取从offset开始, offset+count为止的字符串
+
+### 5.2 创建文本节点
+
+> 使用document的`createTextNode()`方法可以创建元素
+
+```javascript
+var textNode = document.createTextNode("Hello World!");
+element.appendChild(textNode);
+```
+
+### 5.3 访问包含文本
+
+`nodeValue`属性或者`data`属性
+
+## 6. 选择符API
+
+> 通过CSS选择符选择与某个模式匹配的DOM元素, 从而抛开`getElementById()`和`getElementsByTagName()`
+
+方法|说明
+---|---
+querySelector()|接收一个CSS选择符, 返回与该模式匹配的第一个元素
+querySelectorAll()|接收一个CSS选择符, 返回一个NodeList实例
