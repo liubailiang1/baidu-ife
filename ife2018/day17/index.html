@@ -5,39 +5,10 @@
     <title>IFE ECMAScript</title>
 </head>
 <body>
-<input id="first-number" type="number" value="0" placeholder="第一个数字">
-<input id="second-number" type="number" value="0" placeholder="第二个数字">
-<button id="add-btn">加</button>
-<button id="minus-btn">减</button>
-<button id="times-btn">乘</button>
-<button id="divide-btn">除</button>
-<p id="result">运算结果</p>
-<script>
-    var num1 = document.getElementById("first-number");
-    var num2 = document.getElementById("second-number");
-    var add = document.getElementById("add-btn");
-    var minus= document.getElementById("minus-btn");
-    var times = document.getElementById("times-btn");
-    var divide = document.getElementById("divide-btn");
-    var result = document.getElementById("result");
-    
-    add.onclick = function () {
-        result.innerHTML = parseFloat(num1.value) + parseFloat(num2.value);
-    };
-
-    minus.onclick = function () {
-        result.innerHTML = parseFloat(num1.value) - parseFloat(num2.value);
-    };
-
-    times.onclick = function () {
-        result.innerHTML = parseFloat(num1.value) * parseFloat(num2.value);
-    };
-
-    divide.onclick = function () {
-        result.innerHTML = parseFloat(num1.value) / parseFloat(num2.value);
-    };
-
-
-</script>
+<p><a href="1.html">任务1: 简易计算器(容错处理)</a></p>
+<p><a href="2.html">任务2: 十进制转为二进制</a></p>
+<p><a href="3.html">任务3: 十进制转为二进制(结果确定宽度)</a></p>
+<p><a href="4.html">任务4: 输出1~100数字(数3)</a></p>
+<p><a href="5.html">任务5: 九九乘法表</a></p>
 </body>
 </html>
