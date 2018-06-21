@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>day20</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+    <script>
+        var input = document.querySelector("#name");
+        var button = document.querySelector("#submit-btn");
+        button.addEventListener("click", function () {
+            alert(input.value)
+        }, false);
+        input.addEventListener("keydown", function (event) {
+            if (event.keyCode === 13)
+                alert(input.value);
+            else if (event.keyCode === 27)
+                input.value = "";
+        }, false)
+    </script>
+</body>
+</html>
