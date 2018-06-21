@@ -22,7 +22,7 @@
 [第二十二天到第二十四天：JavaScript里面的居民们](http://ife.baidu.com/course/detail/id/50)|基本类型、引用类型(Object、Array、Date、RegExp)|code/demo|[note](ife2018/day22/note)
 [第二十五天到第二十七天 倒数开始 滴答滴 滴答滴](http://ife.baidu.com/course/detail/id/51)|函数|code/demo|[note](ife2018/day25/note)
 [第十九天：找到那个DOM](http://ife.baidu.com/course/detail/id/47)|DOM|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day19)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day19)|[note](ife2018/day19/note)
-[第二十到第二十一天：让你和页面对话](http://ife.baidu.com/course/detail/id/49)| |[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day20)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day20)|[note](ife2018/day20/note)
+[第二十到第二十一天：让你和页面对话](http://ife.baidu.com/course/detail/id/49)|DOM样式、雪碧图、事件、定时|[code](https://github.com/yuqy96/baidu-ife/tree/master/ife2018/day20)/[demo](https://yuqy96.github.io/baidu-ife/ife2018/day20)|[note](ife2018/day20/note)
 
 ----
 

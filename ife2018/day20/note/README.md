@@ -49,3 +49,18 @@ Window|load|所有外部资源完全加载并显示给用户时
 > 2. altkey、ctrlkey、metaKey、shiftKey 键盘辅助键状态
 
 ### 1.3 注册事件处理程序
+
+
+## 2 DOM样式
+
+1. 使用obj.className来修改样式表的类名
+2. 使用obj.style.cssTest来修改嵌入式的css
+3. 使用obj.style.xxx
+4. 使用更改外联的css文件，从而改变元素的css
+
+```javascript
+obj.style.backgroundColor= "black";
+obj.style.cssText = "display:block;color:White;"
+obj.setAttribute("class", "style2");
+obj.setAttribute("href","css2.css");
+```
