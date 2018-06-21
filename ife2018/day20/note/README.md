@@ -50,6 +50,74 @@ Window|load|所有外部资源完全加载并显示给用户时
 
 ### 1.3 注册事件处理程序
 
+```HTML
+//1. HTML事件处理程序
+//尽量不要使用, 分离JS和JavaScript
+<button onclick="alert('Hello')">
+<button onclick="showMessage()">
+```
+
+```javascript
+//2. DOM0级事件处理程序
+//this引用当前元素
+//缺点, 每个目标每个类型只能存在一个处理程序, 会覆盖
+btn.onclick = function() {
+	alert(this.id);
+}
+btn.onclick = null;  //删除
+```
+
+```javascript
+//3. DOM2级事件处理程序
+//可添加多个事件处理程序, 按顺序触发
+//第三个参数为true代表在捕获阶段调用, 为false代表在冒泡阶段调用(推荐)
+//IE9前不支持
+var handler = function() {
+	alert("hello");
+}
+
+btn.addEventListener("click", handler, false);
+btn.removeEventListener("click", handler, false);
+```
+
+```javascript
+//4. IE事件处理程序
+//全局作用域, this==window
+//冒泡
+btn.attachEvent("onclick", handler)
+btn.detachEvent("onclick", handler)
+```
+
+### 1.4 事件流
+
+> 从页面接收事件的顺序
+
+![img](https://images2015.cnblogs.com/blog/860081/201607/860081-20160712202547576-1972316767.png)
+
+### 1.5 事件对象
+
+属性/方法|说明
+---|---
+currentTarget|始终等于this, 当前正在处理的那个元素
+target|事件的目标
+type|被触发的事件类型
+preventDefault()|阻止事件的默认行为(属性`cancelable`为true时)
+stopPropagation()|取消进一步捕获/冒泡
+eventPhase|当前所处阶段(捕获阶段: 1, 目标对象: 2, 冒泡阶段: 3)
+
+IE的区别:
+![img](https://images2015.cnblogs.com/blog/860081/201607/860081-20160712202930998-1556982852.png)
+
+区别|IE|兼容DOM的浏览器
+---|---|---
+event|window.event|event
+target|event.srcElement|event.target
+取消默认行为|returnValue = false|event.preventDefault()
+阻止事件流|cancelBubble = true|stopPropagation()
+
+### 1.6 事件委托
+
+
 
 ## 2 DOM样式
 
