@@ -96,6 +96,8 @@ btn.detachEvent("onclick", handler)
 
 ### 1.5 事件对象
 
+> IE中event可以通过window.event随时取到，而其他浏览器需要通过参数传递
+
 属性/方法|说明
 ---|---
 currentTarget|始终等于this, 当前正在处理的那个元素
@@ -117,7 +119,13 @@ target|event.srcElement|event.target
 
 ### 1.6 事件委托
 
+> 利用事件冒泡, 只指定一个事件处理程序, 就可以管理某一类型的所有事件。将子元素的事件处理程序写到父元素的事件处理程序中  
+> 好处:  
+> 提升页面的整体运行性能, 减少DOM操作; 每个函数都是对象, 占用内存
 
+1. 因为把事件绑定到了父节点上，因此省了绑定事件。就算后面新增的子节点也有了相关事件，删除部分子节点不用去销毁对应节点上绑定的事件
+2. 父节点是通过event.target来找对应的子节点的。（事件处理程序中的this值始终等于currentTarget的值，指向的是绑定到的那个元素）
+3. 适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。
 
 ## 2 DOM样式
 
@@ -131,4 +139,35 @@ obj.style.backgroundColor= "black";
 obj.style.cssText = "display:block;color:White;"
 obj.setAttribute("class", "style2");
 obj.setAttribute("href","css2.css");
+```
+
+## 3 定时
+
+```javascript
+// 超时调用
+setTimeout(function() {
+	// content
+}, 1000);
+
+// 间歇调用
+setInterval(function() {
+	// content
+}, 1000);
+```
+
+> 注意: 1. 第一个参数可以使用代码, 推荐函数;  
+> 2. JavaScript是一个单线程解释器, 需要等待队列前的代码执行完后再指向  
+> 3. 返回一个ID, 可以通过`clearTimeout(id)`/`clearInterval(id)`来取消  
+> 4. 是window对象的方法  
+> 5. 推荐不要使用间歇调用
+
+## 4 sprite
+
+> 将图标、背景、按钮背景等图片合并成一张图，然后通过坐标来定位背景
+
+```css
+background-image: url("sprite.png");
+background-position: -60px 0px;
+width:48px;
+height:48px;
 ```

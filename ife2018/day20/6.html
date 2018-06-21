@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+    <style>
+        .sprite {
+            background-image: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg");
+            width: 480px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+<div class="sprite"></div>
+<script>
+    var div = document.querySelector(".sprite");
+    var px = 0;
+    setInterval(function () {
+        var position = "0 " + px + "px";
+        div.style.backgroundPosition = position;
+        if (px === -8160) {
+            px = 0;
+        }
+        px -= 480;
+    }, 50)
+</script>
+</body>
+</html>
