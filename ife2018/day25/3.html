@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day25</title>
+</head>
+<body>
+    <select id="year-select">
+    </select>
+
+    <select id="month-select">
+    </select>
+
+    <select id="day-select">
+    </select>
+
+    <select id="hour-select">
+    </select>
+
+    <select id="minute-select">
+    </select>
+
+    <select id="second-select">
+    </select>
+
+    <p id="result-wrapper"></p>
+    <script>
+        var year = document.getElementById("year-select");
+        var month = document.getElementById("month-select");
+        var date = document.getElementById("day-select");
+        var hour = document.getElementById("hour-select");
+        var minute = document.getElementById("minute-select");
+        var second = document.getElementById("second-select");
+        var p = document.getElementById("result-wrapper");
+
+        //初始化选择的结果
+        var yearchoose = 2000;
+        var monthchoose = 1;
+        var datechoose = 1;
+        var hourchoose = 0;
+        var minutechoose = 0;
+        var secondchoose = 0;
+
+        //记录定时器的id
+        var intervalid = 0;
+
+        getTime();
+
+        //初始化select表
+        for (let i = 2000; i <= 2035; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            year.appendChild(option);
+        }
+
+        for (let i = 1; i <= 12; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            month.appendChild(option);
+        }
+
+        for (let i = 1; i <= 31; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            date.appendChild(option);
+        }
+
+        for (let i = 0; i <= 23; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            hour.appendChild(option);
+        }
+
+        for (let i = 0; i <= 59; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            minute.appendChild(option);
+        }
+
+        for (let i = 0; i <= 59; i++) {
+            var option = document.createElement("option");
+            option.value = i.toString();
+            option.innerHTML = i.toString();
+            second.appendChild(option);
+        }
+
+
+        year.addEventListener("change", function () {
+            yearchoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            changeDate(yearchoose, monthchoose);
+            getTime();
+        }, false);
+        
+        month.addEventListener("change", function () {
+            monthchoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            changeDate(yearchoose, monthchoose);
+            getTime();
+        }, false);
+
+        date.addEventListener("change", function () {
+            console.log(this.childNodes[this.selectedIndex + 1])
+            datechoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            getTime();
+        }, false);
+
+        hour.addEventListener("change", function () {
+            hourchoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            getTime();
+        }, false);
+
+        minute.addEventListener("change", function () {
+            minutechoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            getTime();
+        }, false);
+
+        second.addEventListener("change", function () {
+            secondchoose = Number(this.childNodes[this.selectedIndex + 1].value);
+            getTime();
+        }, false);
+
+        //改变选择年份月份的日期数
+        function changeDate(year, month) {
+            var max;
+            switch(month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    max = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    max = 30;
+                    break;
+                case 2:
+                    //闰年
+                    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                        max = 29;
+                    }
+                    //平年
+                    else {
+                        max = 28;
+                    }
+                    break;
+            }
+
+            date.innerHTML = " ";  //删去原有子节点
+            for (let i = 1; i <= max; i++) {
+                var option = document.createElement("option");
+                option.value = i.toString();
+                option.innerHTML = i.toString();
+                date.appendChild(option);
+            }
+            datechoose = 1;
+        }
+
+        //当前时间显示处理
+        function getTime() {
+            clearInterval(intervalid);
+            var time = new Date(yearchoose, monthchoose - 1, datechoose, hourchoose, minutechoose, secondchoose);
+            var timeString = showChoose(time);
+            var gapString = "";
+            intervalid = setInterval(function () {
+                var now = new Date();
+                gapString = getGap(now.getTime(), time.getTime());
+                p.innerHTML = timeString + gapString;
+            }, 1000);
+        }
+
+        //显示选择的时间
+        function showChoose(time) {
+            var day = getWeek(time.getDay(), 1);
+            var alldate = dateformat(time.getFullYear(), time.getMonth() + 1, time.getDate(), 1);
+            var alltime = timeformat(time.getHours(), time.getMinutes(), time.getSeconds(), 1);
+            return "现在距离" + alldate + day + " " + alltime;
+        }
+        
+        //计算时间差距并显示
+        function getGap(now, time) {
+            var gap;
+            var date, hour, minute, second;
+            if (now > time) {
+                gap = now - time;
+            }
+            else {
+                gap = time - now;
+            }
+            date = Math.floor(gap / (1000 * 60 * 60 * 24));
+            hour = Math.floor((gap - date * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minute = Math.floor((gap - date * (1000 * 60 * 60 * 24) - hour * (1000 * 60 * 60)) / (1000 * 60));
+            second = Math.floor((gap - date * (1000 * 60 * 60 * 24) - hour * (1000 * 60 * 60) - minute * (1000 * 60)) / 1000);
+            if (now <= time) {
+                return " 还有" + date + "天" + hour + "小时" + minute + "分" + second + "秒";
+            }
+            else {
+                return " 已经过去" + date + "天" + hour + "小时" + minute + "分" + second + "秒";
+            }
+        }
+
+        //个位数填补
+        function fillNumber(num) {
+            return (num >= 10) ? num : ("0" + num);
+        }
+
+        //星期格式
+        function getWeek(num, type) {
+            var week;
+            //中文式
+            if (type === 1) {
+                week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+                return week[num];
+            }
+            //英文式
+            else {
+                week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return week[num];
+            }
+        }
+
+        //日期格式
+        function dateformat(year, month, date, type) {
+            //中文式
+            if (type === 1) {
+                return year + "年" + fillNumber(month) + "月" + fillNumber(date) + "日";
+            }
+            //横线式
+            else {
+                return year + "-" + fillNumber(month) + "-" + fillNumber(date) + " ";
+            }
+        }
+
+        //时间格式
+        function timeformat(hour, minute, second, type) {
+            //24小时制
+            if (type === 1) {
+                return fillNumber(hour) + ":" + fillNumber(minute) + ":" + fillNumber(second);
+            }
+            //12小时制
+            else {
+                if (hour <= 12) {
+                    return fillNumber(hour) + ":" + fillNumber(minute) + ":" + fillNumber(second) + " AM";
+                }
+                else {
+                    return fillNumber(hour - 12) + ":" + fillNumber(minute) + ":" + fillNumber(second) + " PM";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

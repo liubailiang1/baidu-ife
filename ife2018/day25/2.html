@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day25</title>
+    <style>
+        time {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <time></time>
+    <time></time>
+    <script>
+        var time1 = document.querySelectorAll("time")[0];
+        var time2 = document.querySelectorAll("time")[1];
+        setInterval(function () {
+            var now = new Date();
+
+            var day1 = getWeek(now.getDay(), 1);
+            var alldate1 = dateformat(now.getFullYear(), now.getMonth() + 1, now.getDate(), 1);
+            var alltime1 = timeformat(now.getHours(), now.getMinutes(), now.getSeconds(), 1);
+            time1.innerHTML = alldate1 + day1 + " " + alltime1;
+
+            var day2 = getWeek(now.getDay(), 2);
+            var alldate2 = dateformat(now.getFullYear(), now.getMonth() + 1, now.getDate(), 2);
+            var alltime2 = timeformat(now.getHours(), now.getMinutes(), now.getSeconds(), 2);
+            time2.innerHTML = alldate2 + day2 + " " + alltime2;
+        }, 1000);
+
+        //个位数填补
+        function fillNumber(num) {
+            return (num >= 10) ? num : ("0" + num);
+        }
+
+        function getWeek(num, type) {
+            var week;
+            //中文式
+            if (type === 1) {
+                week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+                return week[num];
+            }
+            //英文式
+            else {
+                week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return week[num];
+            }
+        }
+
+        function dateformat(year, month, date, type) {
+            //中文式
+            if (type === 1) {
+                return year + "年" + fillNumber(month) + "月" + fillNumber(date) + "日";
+            }
+            //横线式
+            else {
+                return year + "-" + fillNumber(month) + "-" + fillNumber(date) + " ";
+            }
+        }
+        
+        function timeformat(hour, minute, second, type) {
+            //24小时制
+            if (type === 1) {
+                return fillNumber(hour) + ":" + fillNumber(minute) + ":" + fillNumber(second);
+            }
+            //12小时制
+            else {
+                if (hour <= 12) {
+                    return fillNumber(hour) + ":" + fillNumber(minute) + ":" + fillNumber(second) + " AM";
+                }
+                else {
+                    return fillNumber(hour - 12) + ":" + fillNumber(minute) + ":" + fillNumber(second) + " PM";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
