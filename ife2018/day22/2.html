@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <div>
+        <label>String A:
+            <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+        </label>
+        <textarea id="str-a"></textarea>
+        <label>String B:
+            <input id="radio-b" type="radio" name="str-obj" value="b">
+        </label>
+        <textarea id="str-b"></textarea>
+        <label>Num A：<input id="num-a" type="number" value="0"></label>
+        <label>Num B：<input id="num-b" type="number" value="1"></label>
+    </div>
+    <div>
+        <button>获取当前选中输入的内容长度</button>
+        <button>当前选中输入中的第3个字符</button>
+        <button>把两个输入框的文字连接在一起输出（concat）</button>
+        <button>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+        <button>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+        <button>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+        <button>当前选中输入框的行数</button>
+        <button>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+        <button>把所选输入框中的内容全部转为大写</button>
+        <button>把所选输入框中的内容全部转为小写</button>
+        <button>把所选输入框中内容的半角空格全部去除</button>
+        <button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+    </div>
+    <p id="result"></p>
+    <script>
+        var buttondiv = document.querySelectorAll("div")[1];
+        var radioa = document.querySelector("#radio-a");
+        var radiob = document.querySelector("#radio-b");
+        var stra = document.querySelector("#str-a");
+        var strb = document.querySelector("#str-b");
+        var numa = document.querySelector("#num-a");
+        var numb = document.querySelector("#num-b");
+        var p = document.querySelector("#result");
+
+        buttondiv.addEventListener("click", function (event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            switch (target.innerHTML) {
+                case "获取当前选中输入的内容长度":
+                    if (radioa.checked) {
+                        task1(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task1(strb.value)
+                    }
+                    break;
+                case "当前选中输入中的第3个字符":
+                    if (radioa.checked) {
+                        task2(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task2(strb.value)
+                    }
+                    break;
+                case "把两个输入框的文字连接在一起输出（concat）":
+                    task3(stra.value, strb.value);
+                    break;
+                case "输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）":
+                    task4(stra.value, strb.value);
+                    break;
+                case "输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）":
+                    task5(stra.value, strb.value);
+                    break;
+                case "使用slice获取选中输入框内容的部分内容，参数为num-a及num-b":
+                    if (radioa.checked) {
+                        task6(stra.value, Number(numa.value), Number(numb.value));
+                    }
+                    else if (radiob.checked) {
+                        task6(strb.value, Number(numa.value), Number(numb.value))
+                    }
+                    break;
+                case "当前选中输入框的行数":
+                    if (radioa.checked) {
+                        task7(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task7(strb.value)
+                    }
+                    break;
+                case "使用substr获取选中输入框内容的子字符串，参数为num-a及num-b":
+                    if (radioa.checked) {
+                        task8(stra.value, Number(numa.value), Number(numb.value));
+                    }
+                    else if (radiob.checked) {
+                        task8(strb.value, Number(numa.value), Number(numb.value))
+                    }
+                    break;
+                case "把所选输入框中的内容全部转为大写":
+                    if (radioa.checked) {
+                        task9(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task9(strb.value)
+                    }
+                    break;
+                case "把所选输入框中的内容全部转为小写":
+                    if (radioa.checked) {
+                        task10(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task10(strb.value)
+                    }
+                    break;
+                case "把所选输入框中内容的半角空格全部去除":
+                    if (radioa.checked) {
+                        task11(stra.value);
+                    }
+                    else if (radiob.checked) {
+                        task11(strb.value)
+                    }
+                    break;
+                case "把所选输入框中内容的a全部替换成另外一个输入框中的内容":
+                    if (radioa.checked) {
+                        task12(stra.value, strb.value);
+                    }
+                    else if (radiob.checked) {
+                        task12(strb.value, stra.value);
+                    }
+                    break;
+            }
+        }, false);
+
+        function task1(str) {
+            p.innerHTML = str.length;
+        }
+        
+        function task2(str) {
+            p.innerHTML = str.charAt(2);
+        }
+
+        function task3(str1, str2) {
+            p.innerHTML = str1.concat(str2);
+        }
+
+        function task4(str1, str2) {
+            p.innerHTML = str1.indexOf(str2).toString();
+        }
+
+        function task5(str1, str2) {
+            p.innerHTML = str2.lastIndexOf(str1).toString();
+        }
+
+        function task6(str, num1, num2) {
+            p.innerHTML = str.slice(num1, num2);
+        }
+
+        function task7(str) {
+            p.innerHTML = str.split("\n").length.toString();
+        }
+
+        function task8(str, num1, num2) {
+            p.innerHTML = str.substr(num1, num2);
+        }
+
+        function task9(str) {
+            p.innerHTML = str.toUpperCase();
+        }
+
+        function task10(str) {
+            p.innerHTML = str.toLowerCase();
+        }
+
+        function task11(str) {
+            p.innerHTML = str.replace(" ", "");
+        }
+
+        function task12(str1, str2) {
+            p.innerHTML = str1.replace(/a/g, str2);
+        }
+    </script>
+</body>
+</html>

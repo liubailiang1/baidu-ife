@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-        <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+        <label>Number A:<input id="radio-a" checked="true" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
         <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
     </div>
     <div>
@@ -33,40 +33,117 @@
             var target = e.target || e.srcElement;
             switch (target.innerHTML) {
                 case "判断当前选中的输入框输入内容是否为数字":
-                    task1();
+                    if (radioa.checked) {
+                        task1(numa.value);
+                    }
+                    else if (radiob.checked) {
+                        task1(numb.value)
+                    }
                     break;
                 case "把 A 四舍五入为 B 个小数位数的数字":
-                    console.log(2);
+                    task2(numa.value, numb.value);
                     break;
                 case "当前选中数字的绝对值":
-                    console.log(3);
+                    if (radioa.checked) {
+                        task3(numa.value);
+                    }
+                    else if (radiob.checked) {
+                        task3(numb.value)
+                    }
                     break;
                 case "对当前选中的数字进行上舍入":
-                    console.log(4);
+                    if (radioa.checked) {
+                        task4(numa.value);
+                    }
+                    else if (radiob.checked) {
+                        task4(numb.value)
+                    }
                     break;
                 case "对当前选中的数字进行下舍入":
-                    console.log(5);
+                    if (radioa.checked) {
+                        task5(numa.value);
+                    }
+                    else if (radiob.checked) {
+                        task5(numb.value)
+                    }
                     break;
                 case "把当前选中的数字四舍五入为最接近的整数":
-                    console.log(6);
+                    if (radioa.checked) {
+                        task6(numa.value);
+                    }
+                    else if (radiob.checked) {
+                        task6(numb.value)
+                    }
                     break;
                 case "返回 A 和 B 中的最高值":
-                    console.log(7);
+                    task7(numa.value, numb.value);
                     break;
                 case "返回 A 和 B 中的最低值":
-                    console.log(8);
+                    task8(numa.value, numb.value);
                     break;
             }
         }, false);
-        
-        function task1() {
-            if (radioa.checked) {
-                console.log(numa.value)
+
+        function getNum(num) {
+            if (!isNaN(num)) {
+                return Number(num);
             }
-            else if (radiob.checked) {
-                console.log(numb.value)
+            else {
+                console.log("请输入数字!");
+                return 0;
             }
         }
+
+        function task1(num) {
+            if (!isNaN(num)) {  //不严谨, ""也会true
+                p.innerHTML = "当前选中的输入框输入内容 是数字";
+            }
+            else {
+                p.innerHTML = "当前选中的输入框输入内容 不是数字";
+            }
+        }
+
+        function task2(num1, num2) {
+            var num1Number = getNum(num1);
+            var num2Number = getNum(num2);
+            var result = num1Number.toFixed(num2Number);
+            p.innerHTML = result + "(浮点数取值有问题)";
+        }
+
+        function task3(num) {
+            var numNumber = getNum(num);
+            p.innerHTML = Math.abs(numNumber).toString();
+        }
+
+        function task4(num) {
+            var numNumber = getNum(num);
+            p.innerHTML = Math.ceil(numNumber).toString();
+        }
+
+        function task5(num) {
+            var numNumber = getNum(num);
+            p.innerHTML = Math.floor(numNumber).toString();
+        }
+
+        function task6(num) {
+            var numNumber = getNum(num);
+            p.innerHTML = Math.round(numNumber).toString();
+        }
+
+        function task7(num1, num2) {
+            var num1Number = getNum(num1);
+            var num2Number = getNum(num2);
+            var result = (num1Number >= num2Number) ? num1Number : num2Number;
+            p.innerHTML = result.toString();
+        }
+
+        function task8(num1, num2) {
+            var num1Number = getNum(num1);
+            var num2Number = getNum(num2);
+            var result = (num1Number <= num2Number) ? num1Number : num2Number;
+            p.innerHTML = result.toString();
+        }
+        
     </script>
 </body>
 </html>

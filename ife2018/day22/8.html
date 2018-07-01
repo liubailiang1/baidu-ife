@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+<input id="stack-input" type="text">
+<p id="stack-cont">栈内容：apple&lt;-pear</p>
+<button id="push-btn">进栈</button>
+<button id="pop-btn">退栈</button>
+<button id="font-btn">打印栈顶元素内容</button>
+<button id="empty-btn">判断栈是否为空</button>
+
+<script>
+
+    var stack = ["apple", "pear"];
+
+    var input = document.getElementById("stack-input");
+    var p = document.getElementById("stack-cont");
+    var task1 = document.getElementById("push-btn");
+    var task2 = document.getElementById("pop-btn");
+    var task3 = document.getElementById("font-btn");
+    var task4 = document.getElementById("empty-btn");
+
+    task1.addEventListener("click", function () {
+        if (input.value) {
+            stack.unshift(input.value);
+            p.innerHTML = "栈内容：" + stack.join("&lt;-");
+        }
+        else {
+            console.log("请输入内容");
+        }
+    }, false);
+
+    task2.addEventListener("click", function () {
+        stack.shift();
+        p.innerHTML = "栈内容：" + stack.join("&lt;-");
+    }, false);
+
+    task3.addEventListener("click", function () {
+        console.log(stack[stack.length - 1]);
+    }, false);
+
+    task4.addEventListener("click", function () {
+        if (stack.length) {
+            console.log("不为空");
+        }
+        else {
+            console.log("为空");
+        }
+    }, false);
+
+</script>
+</body>
+</html>

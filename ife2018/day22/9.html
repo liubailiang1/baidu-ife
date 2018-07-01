@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <script>
+        var arr1 = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+        //将上面数组分别按从大到小以及从小到大进行排序后在console中输出
+        arr1.sort(function (value1, value2) {
+            return value1 - value2;
+        });
+        console.log(arr1);
+
+        arr1.sort(function (value1, value2) {
+            return value2 - value1;
+        });
+        console.log(arr1);
+
+        var arr2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+        //将上面数组分别按字母顺序a-z及z-a进行排序，在console中输出
+        arr2.sort();
+        console.log(arr2);
+
+        arr2.sort().reverse();
+        console.log(arr2);
+
+        var arr3 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+        //将上面的二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出，输出结果应该为：[[22, 63], [16, 60], [7, 44], [26, 35], [10, 14]]
+        arr3.sort(function (value1, value2) {
+           return value2[1] - value1[1];
+        });
+        console.log(arr3);
+
+        var arr4 = [
+            {
+                id: 1,
+                name: 'candy',
+                value: 40
+            }, {
+                id: 2,
+                name: 'Simon',
+                value: 50
+            }, {
+                id: 3,
+                name: 'Tony',
+                value: 45
+            }, {
+                id: 4,
+                name: 'Annie',
+                value: 60
+            }
+        ];
+        //上面数组分别按元素对象的value值从小到大进行排序后输出
+        arr4.sort(function (value1, value2) {
+            return value1.value - value2.value;
+        })
+        console.log(arr4);
+    </script>
+</body>
+</html>
