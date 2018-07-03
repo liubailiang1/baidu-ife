@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day42</title>
+</head>
+<body>
+    <p>请打开控制台</p>
+    <script>
+        function Restaurant(o) {
+            this.cash = o.cash;
+            this.seats = o.seats;
+            this.staff = o.staff;
+        }
+        Restaurant.prototype.hire = function (o) {
+            this.staff.push(o.name);
+        };
+        Restaurant.prototype.fire = function (o) {
+
+            this.staff.splice(this.staff.indexOf(o.name), 1);
+        };
+
+        function Staff(name, salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+        Staff.prototype.doSomething = function () {
+            console.log("做一点事");
+        };
+
+        function Waiter(name, salary) {
+            Staff.call(this, name, salary);
+        }
+        Waiter.prototype = Object.create(Staff.prototype);
+        Waiter.prototype.constructor = Waiter;
+        Waiter.prototype.doSomething = function () {
+            if (arguments[0] instanceof Array) {
+                console.log("记录菜品");
+            }
+            else {
+                console.log("上菜");
+            }
+        };
+
+        function Cook(name, salary) {
+            Staff.call(this, name, salary);
+        }
+        Cook.prototype = Object.create(Staff.prototype);
+        Cook.prototype.constructor = Cook;
+        Cook.prototype.doSomething = function () {
+            console.log("烹饪出菜品")
+        };
+        
+        function Customer() {
+
+        }
+        Customer.prototype.order = function () {
+            console.log("点菜");
+        };
+        Customer.prototype.eat = function () {
+            console.log("吃");
+        };
+
+        function Food(name, cost, price) {
+            this.name = name;
+            this.cost = cost;
+            this.prize = price;
+        }
+    </script>
+</body>
+</html>
