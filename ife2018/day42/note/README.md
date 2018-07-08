@@ -74,7 +74,7 @@ prototype属性：指向其原型对象。
 ```javascript
 //__proto__
 person1.__proto__ == Person.prototype;
-//isPrototypeOf()
+//isPrototypeOf()  原型对象和实例的关系
 Person.prototype.isPrototypeOf(person1) == true;
 //Object.getPrototypeOf()
 Object.getPrototypeOf(person1) == Person.prototype;
@@ -140,7 +140,7 @@ var instance = new SubType();
 3. 所有的函数原型都是Object的实例
 4. `instance`和`isPrototypeOf()`可用于判断原型和实例的关系
 
-缺点: 原先的实例类型将会变为原型类型(被共享); 不能传递参数
+缺点: 原先的实例类型将会变为原型类型(被共享); 不能向超类型构造函数传递参数
 
 ### 1.2.2 借用构造函数
 
